@@ -19,10 +19,3 @@ class CustomException(Exception):
 
     def __str__(self):
         return self.error_message
-
-if __name__ == "__main__":
-    try:
-        a = 1 / 0  # Intentional error
-    except Exception as e:
-        logging.info("An error is about to be logged...")  # Log before raising
-        raise CustomException(e, sys)  # This should log the error
